@@ -7,27 +7,27 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-char	*get_next_line(int fd);
-char	*ft_strjoin(char *s1, char c);
-size_t	ft_strlen(char *str);
-
-typedef struct	s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}				t_data;
-
 typedef struct	s_vars {
 	void	*mlx;
 	void	*win;
-	int		height;
-	int		width;
-	int		height1;
-	int		width1;
-	void	*image_p;
-	void	*image_bg;
+	int		x;
+	int		y;
+	int		i;
+	int		j;
+	void	*i_p;
+	void	*i_g;
+	void	*i_c;
+	void	*i_w;
+	int		coin_c; /*coin counter*/
+	char **s;
 }				t_vars;
+
+char	*get_next_line(int fd);
+int		move_function(int keycode, t_vars *vars);
+char	*ft_strjoin(char *s1, char c);
+size_t	ft_strlen(char *str);
+void	ft_line_counter(int	*count);
+void	read_map(t_vars *asdf);
+void    player_place(t_vars *asdf);;
 
 #endif

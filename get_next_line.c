@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:41:49 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/13 13:07:39 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/14 21:59:51 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(char *str)
 	size_t	i;
 
 	i = 0;
-	while (str[i] > 0)
+	while (str[i])
 		i++;
 	return (i);
 }
@@ -84,7 +84,7 @@ char *get_next_line(int fd)
         free(str);
         return (NULL);
     }
-    if (read_return == 0 && !str)
+    if (read_return == 0 && !str[0])
     {
         free(str);
         return (NULL);
