@@ -14,11 +14,14 @@ typedef struct	s_vars {
 	int		y;
 	int		i;
 	int		j;
-	void	*i_p;
-	void	*i_g;
-	void	*i_c;
-	void	*i_w;
+	void	*i_p; /*player image*/
+	void	*i_g; /*grass image*/
+	void	*i_c; /*coin image*/
+	void	*i_w; /*wall image*/
+	void	*i_ov; /*open vent image*/
+	void	*i_cv; /*close vent image*/
 	int		coin_c; /*coin counter*/
+	int		p_moves; /*player moves*/
 	char **s;
 }				t_vars;
 
@@ -26,7 +29,7 @@ char	*get_next_line(int fd);
 int		move_function(int keycode, t_vars *vars);
 char	*ft_strjoin(char *s1, char c);
 size_t	ft_strlen(char *str);
-void	ft_line_counter(int	*count);
+void	ft_line_counter(int	*count, char *str);
 void	read_map(t_vars *asdf);
 void    player_place(t_vars *asdf);;
 

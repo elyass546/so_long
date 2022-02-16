@@ -6,17 +6,17 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:40:27 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/15 22:54:33 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/16 19:36:51 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void		ft_line_counter(int	*count)
+void		ft_line_counter(int	*count, char *s)
 {
 	int		i;
 	char	*str;
-	int fd = open("maps.ber", O_RDONLY);
+	int fd = open(s, O_RDONLY);
 	if(fd < 0)
 	{
 		perror("map name is Unacceptable");

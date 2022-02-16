@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:39:17 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/15 22:55:36 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/16 18:14:47 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void		read_map(t_vars *asdf)
 				mlx_put_image_to_window(asdf->mlx, asdf->win, asdf->i_c, m, n);
 				asdf->coin_c++;
 			}
+			if (asdf->s[a][b] == 'E')
+				mlx_put_image_to_window(asdf->mlx, asdf->win, asdf->i_cv, m, n);
 			b++;
 			m += 75;
 		}
@@ -49,5 +51,4 @@ void		read_map(t_vars *asdf)
 		n += 75;
 		a++;	
 	}
-	printf("%d\n", asdf->coin_c);
 }
