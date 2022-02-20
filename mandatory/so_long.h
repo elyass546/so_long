@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 19:34:32 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/20 19:37:27 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/20 20:22:07 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,8 @@ void	macro_right(t_vars *vars);
 void	macro_left(t_vars *vars);
 void	macro_up(t_vars *vars);
 void	macro_down(t_vars *vars);
+void	ft_putnbr(int n);
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
 
 #endif

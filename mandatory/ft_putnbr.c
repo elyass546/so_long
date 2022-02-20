@@ -1,37 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   line_counter.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 19:40:27 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/20 20:21:30 by ie-laabb         ###   ########.fr       */
+/*   Created: 2022/02/20 19:40:32 by ie-laabb          #+#    #+#             */
+/*   Updated: 2022/02/20 19:57:13 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_line_counter(int	*count, char *s)
+void    ft_putstr(char *str)
 {
-	int		i;
-	char	*str;
-	int		fd;
+    int i;
 
 	i = 0;
-	fd = open(s, O_RDONLY);
-	if (fd < 0)
+	while (str[i])
 	{
-		ft_putstr("Error\nmap name is unacceptable");
-		exit(1);
+		write(1, &str[i++], 1);
 	}
-	str = get_next_line(fd);
-	count[1] = ft_strlen(str);
-	while (str)
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(int n)
+{
+	long	nb;
+
+	nb = (long)n;
+	if (nb < 0)
 	{
-		i++;
-		free (str);
-		str = get_next_line(fd);
+		nb = -nb;
+		ft_putchar('-');
 	}
-	count[0] = i;
+	if (nb <= 9)
+		ft_putchar(nb + '0');
+	else
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
 }
