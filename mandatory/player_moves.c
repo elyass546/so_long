@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:42:07 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/16 19:21:24 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/20 18:31:52 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 void	right_move(t_vars *vars)
 {
-	if (vars->s[vars->y][vars->x + 1] == '0')
+	if (vars->s[vars->y][vars->x + 1] == '0'
+		|| vars->s[vars->y][vars->x + 1] == 'P')
 	{
+		vars->x++;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
 		vars->i += 75;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_p, vars->i, vars->j);
+		vars->s[vars->y][vars->x] = '0';
 		vars->p_moves++;
 		printf("player moves : %d\n", vars->p_moves);
 	}
-	if (vars->s[vars->y][vars->x + 1] == 'C')
+	else if (vars->s[vars->y][vars->x + 1] == 'C')
 	{
 		vars->x++;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
@@ -30,10 +33,11 @@ void	right_move(t_vars *vars)
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_p, vars->i, vars->j);
 		vars->s[vars->y][vars->x] = '0';
 		vars->coin_c--;
+		printf("%d",vars->coin_c);
 		vars->p_moves++;
 		printf("player moves : %d\n", vars->p_moves);
 	}
-	if (vars->s[vars->y][vars->x + 1] == 'E' && vars->coin_c == 0)
+	else if (vars->s[vars->y][vars->x + 1] == 'E' && vars->coin_c == 0)
 	{
 		vars->x++;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
@@ -48,15 +52,17 @@ void	right_move(t_vars *vars)
 
 void	left_move(t_vars *vars)
 {
-	if (vars->s[vars->y][vars->x - 1] == '0')
+	if (vars->s[vars->y][vars->x - 1] == '0' || vars->s[vars->y][vars->x - 1] == 'P')
 	{
+		vars->x--;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
 		vars->i -= 75;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_p, vars->i, vars->j);
+		vars->s[vars->y][vars->x] = '0';
 		vars->p_moves++;
 		printf("player moves : %d\n", vars->p_moves);
 	}
-	if (vars->s[vars->y][vars->x - 1] == 'C')
+	else if (vars->s[vars->y][vars->x - 1] == 'C')
 	{
 		vars->x--;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
@@ -67,7 +73,7 @@ void	left_move(t_vars *vars)
 		vars->p_moves++;
 		printf("player moves : %d\n", vars->p_moves);
 	}
-	if (vars->s[vars->y][vars->x - 1] == 'E' && vars->coin_c == 0)
+	else if (vars->s[vars->y][vars->x - 1] == 'E' && vars->coin_c == 0)
 	{
 		vars->x--;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
@@ -82,15 +88,16 @@ void	left_move(t_vars *vars)
 
 void	up_move(t_vars *vars)
 {
-	if (vars->s[vars->y - 1][vars->x] == '0')
+	if (vars->s[vars->y - 1][vars->x] == '0' || vars->s[vars->y - 1][vars->x] == 'P')
 	{
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
 		vars->j -= 75;	
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_p, vars->i, vars->j);
+		vars->s[vars->y][vars->x] = '0';
 		vars->p_moves++;
 		printf("player moves : %d\n", vars->p_moves);
 	}
-	if (vars->s[vars->y - 1][vars->x] == 'C')
+	else if (vars->s[vars->y - 1][vars->x] == 'C')
 	{
 		vars->y--;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
@@ -101,7 +108,7 @@ void	up_move(t_vars *vars)
 		vars->p_moves++;
 		printf("player moves : %d\n", vars->p_moves);
 	}
-	if (vars->s[vars->y - 1][vars->x] == 'E' && vars->coin_c == 0)
+	else if (vars->s[vars->y - 1][vars->x] == 'E' && vars->coin_c == 0)
 	{
 		vars->y--;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
@@ -116,15 +123,16 @@ void	up_move(t_vars *vars)
 
 void	down_move(t_vars *vars)
 {
-	if (vars->s[vars->y + 1][vars->x] == '0')
+	if (vars->s[vars->y + 1][vars->x] == '0' || vars->s[vars->y + 1][vars->x] == 'P')
 	{
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
 		vars->j += 75;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_p, vars->i, vars->j);
+		vars->s[vars->y][vars->x] = '0';
 		vars->p_moves++;
 		printf("player moves : %d\n", vars->p_moves);
 	}
-	if (vars->s[vars->y + 1][vars->x] == 'C')
+	else if (vars->s[vars->y + 1][vars->x] == 'C')
 	{
 		vars->y++;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
@@ -135,7 +143,7 @@ void	down_move(t_vars *vars)
 		vars->p_moves++;
 		printf("player moves : %d\n", vars->p_moves);
 	}
-	if (vars->s[vars->y + 1][vars->x] == 'E' && vars->coin_c == 0)
+	else if (vars->s[vars->y + 1][vars->x] == 'E' && vars->coin_c == 0)
 	{
 		vars->y++;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
