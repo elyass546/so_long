@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/20 19:34:32 by ie-laabb          #+#    #+#             */
+/*   Updated: 2022/02/20 19:37:27 by ie-laabb         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -7,50 +19,35 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-typedef struct	s_vars {
+typedef struct s_vars {
 	void	*mlx;
 	void	*win;
 	int		x;
 	int		y;
 	int		i;
 	int		j;
-	void	*i_p; /*player image*/
-	void	*i_g; /*grass image*/
-	void	*i_c; /*coin image*/
-	void	*i_w; /*wall image*/
-	void	*i_ov; /*open vent image*/
-	void	*i_cv; /*close vent image*/
-	int		coin_c; /*coin counter*/
-	int		p_moves; /*player moves*/
-	int		lines_c; /*lines counter*/
-	int		p_c; /*player counter map_checker*/
-	int		c_c; /*coins counter map_checker*/
-	int		v_c; /*vent counter map_checker*/
+	void	*i_p;
+	void	*i_g;
+	void	*i_c;
+	void	*i_w;
+	void	*i_ov;
+	void	*i_cv;
+	int		coin_c;
+	int		p_moves;
+	int		lines_c;
+	int		p_c;
+	int		c_c;
+	int		v_c;
 	int		size_line;
-	char **s;
+	char	**s;
 }				t_vars;
 
-typedef struct s_data
-{
+typedef struct s_data {
 	char	c;
 	char	*str;
 	int		read_return;
 	char	*temp;
 }				t_data;
-
-typedef struct s_asdf
-{
-	int p_c;
-	int c_c;
-	int v_c;
-	int size_line;
-}				t_asdf;
-
-typedef struct s_map
-{
-	int	a;
-	int	b;
-}				t_map;
 
 char	*get_next_line(int fd);
 int		move_function(int keycode, t_vars *vars);
@@ -58,7 +55,11 @@ char	*ft_strjoin(char *s1, char c);
 size_t	ft_strlen(char *str);
 void	ft_line_counter(int	*count, char *str);
 void	read_map(t_vars *asdf);
-void    player_place(t_vars *asdf);
-void		map_checker(t_vars *vars);
+void	player_place(t_vars *asdf);
+void	map_checker(t_vars *vars);
+void	macro_right(t_vars *vars);
+void	macro_left(t_vars *vars);
+void	macro_up(t_vars *vars);
+void	macro_down(t_vars *vars);
 
 #endif
