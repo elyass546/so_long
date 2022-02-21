@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 19:34:32 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/20 20:22:07 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/21 16:01:47 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_vars {
 	void	*i_w;
 	void	*i_ov;
 	void	*i_cv;
+	void	*i_enm;
 	int		coin_c;
 	int		p_moves;
 	int		lines_c;

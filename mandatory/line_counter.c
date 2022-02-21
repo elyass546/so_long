@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:40:27 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/21 15:41:18 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/21 16:04:22 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,8 @@ void	ft_line_counter(int	*count, char *s)
 
 	i = 0;
 	a = ft_strcmp(s);
-	if (a != 0)
-	{
-		ft_putstr("Error\nmap name is unacceptable 123");
-		exit(1);
-	}
 	fd = open(s, O_RDONLY);
-	if (fd < 0)
+	if (fd < 0 || a != 0)
 	{
 		ft_putstr("Error\nmap name is unacceptable");
 		exit(1);
