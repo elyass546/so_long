@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 19:34:32 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/21 16:01:47 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/23 17:47:50 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,15 @@ typedef struct s_vars {
 	void	*win;
 	int		x;
 	int		y;
+	int		enm_x;
+	int		enm_y;
 	int		i;
+	int		e_moves;
 	int		j;
+	int		enm_i;
+	int		enm_j;
+	int		switsh;
+	void	*i_deadp;
 	void	*i_p;
 	void	*i_g;
 	void	*i_c;
@@ -33,13 +40,21 @@ typedef struct s_vars {
 	void	*i_ov;
 	void	*i_cv;
 	void	*i_enm;
+	void	*m_1;
+	void	*m_2;
+	void	*m_3;
+	void	*m_4;
+	void	*m_5;
 	int		coin_c;
 	int		p_moves;
 	int		lines_c;
 	int		p_c;
 	int		c_c;
+	int		im_c;
 	int		v_c;
 	int		size_line;
+	int		alive;
+	int		loop;
 	char	**s;
 }				t_vars;
 
@@ -65,5 +80,10 @@ void	macro_down(t_vars *vars);
 void	ft_putnbr(int n);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
+char	*ft_itoa(int n);
+int    animation(t_vars *vars);
+void	enemy(t_vars *vars);
+void    enemy_mup(t_vars *vars);
+void    enemy_mdown(t_vars *vars);
 
 #endif

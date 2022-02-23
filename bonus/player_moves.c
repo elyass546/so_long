@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:42:07 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/20 19:29:24 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/23 23:13:11 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ void	right_move(t_vars *vars)
 	{
 		macro_right(vars);
 		vars->coin_c--;
+	}
+	else if (vars->s[vars->y][vars->x + 1] == 'I')
+	{
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
+		vars->i += 75;
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_deadp, vars->i, vars->j);
+		vars->alive = 0;
 	}
 	else if (vars->s[vars->y][vars->x + 1] == 'E' && vars->coin_c == 0)
 	{
@@ -39,6 +47,14 @@ void	left_move(t_vars *vars)
 		macro_left(vars);
 		vars->coin_c--;
 	}
+	else if (vars->s[vars->y][vars->x - 1] == 'I')
+	{
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
+		vars->i -= 75;
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_deadp, vars->i, vars->j);
+		vars->alive = 0;
+	}
 	else if (vars->s[vars->y][vars->x - 1] == 'E' && vars->coin_c == 0)
 	{
 		macro_left(vars);
@@ -55,6 +71,14 @@ void	up_move(t_vars *vars)
 	{
 		macro_up(vars);
 		vars->coin_c--;
+	}
+	else if (vars->s[vars->y - 1][vars->x] == 'I')
+	{
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
+		vars->j -= 75;
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_deadp, vars->i, vars->j);
+		vars->alive = 0;
 	}
 	else if (vars->s[vars->y - 1][vars->x] == 'E' && vars->coin_c == 0)
 	{
@@ -73,6 +97,15 @@ void	down_move(t_vars *vars)
 		macro_down(vars);
 		vars->coin_c--;
 	}
+	else if (vars->s[vars->y + 1][vars->x] == 'I')
+	{
+		
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
+		vars->j += 75;
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g, vars->i, vars->j);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_deadp, vars->i, vars->j);
+		vars->alive = 0;
+	}
 	else if (vars->s[vars->y + 1][vars->x] == 'E' && vars->coin_c == 0)
 	{
 		macro_down(vars);
@@ -84,15 +117,18 @@ int	move_function(int keycode, t_vars *vars)
 {
 	vars->x = vars->i / 75;
 	vars->y = vars->j / 75;
-	if (keycode == 53)
-		exit (1);
-	if (keycode == 13)
-		up_move(vars);
-	if (keycode == 0)
-		left_move(vars);
-	if (keycode == 1)
-		down_move(vars);
-	if (keycode == 2)
-		right_move(vars);
+	if (vars->alive == 1)
+	{
+		if (keycode == 53)
+			exit (1);
+		if (keycode == 13)
+			up_move(vars);
+		if (keycode == 0)
+			left_move(vars);
+		if (keycode == 1)
+			down_move(vars);
+		if (keycode == 2)
+			right_move(vars);
+	}
 	return (0);
 }

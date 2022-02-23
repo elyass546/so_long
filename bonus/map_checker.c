@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:40:03 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/21 13:19:43 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/22 18:59:25 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	hello(t_vars *vars)
 		}
 		i++;
 	}
-	if (vars->p_c != 1 || vars->c_c < 1 || vars->v_c < 1)
+	if (vars->p_c != 1 || vars->c_c < 1 || vars->v_c < 1 || vars->im_c != 1)
 	{
 		write(2, "Error\nmissing one or more ellements", 36);
 		exit(1);
@@ -39,6 +39,7 @@ void	hello(t_vars *vars)
 
 void	map_macro(t_vars *vars, int i, int j)
 {
+	
 	while (vars->s[i][j])
 	{
 		if (vars->s[0][j] != '1' || vars->s[vars->lines_c - 1][j] != '1')
@@ -52,10 +53,13 @@ void	map_macro(t_vars *vars, int i, int j)
 			vars->c_c++;
 		else if (vars->s[i][j] == 'E')
 			vars->v_c++;
+		else if (vars->s[i][j] == 'I')
+			vars->im_c++;
 		else if (vars->s[i][j] != 'E' && vars->s[i][j] != 'C'
 					&& vars->s[i][j] != '1')
 		{
-			if (vars->s[i][j] != 'P' && vars->s[i][j] != '0')
+			if (vars->s[i][j] != 'P' && vars->s[i][j] != '0'
+					&& vars->s[i][j] != 'I')
 			{
 				write(2, "Error\nwa zabi rak zayd chi7aja", 31);
 				exit(1);
@@ -75,6 +79,7 @@ void	map_checker(t_vars *vars)
 	vars->c_c = 0;
 	vars->p_c = 0;
 	vars->v_c = 0;
+	vars->im_c = 0;
 	while (vars->s[i])
 	{
 		map_macro(vars, i, j);
