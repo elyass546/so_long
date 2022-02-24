@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:40:03 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/22 18:59:25 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/24 15:01:31 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,30 @@ void	hello(t_vars *vars)
 	}
 }
 
+void	map_macro_utils(t_vars *vars, int i, int j)
+{
+	if (vars->s[i][j] == 'P')
+			vars->p_c++;
+	else if (vars->s[i][j] == 'C')
+		vars->c_c++;
+	else if (vars->s[i][j] == 'E')
+		vars->v_c++;
+	else if (vars->s[i][j] == 'I')
+		vars->im_c++;
+	else if (vars->s[i][j] != 'E' && vars->s[i][j] != 'C'
+				&& vars->s[i][j] != '1')
+	{
+		if (vars->s[i][j] != 'P' && vars->s[i][j] != '0'
+				&& vars->s[i][j] != 'I')
+		{
+			write(2, "Error\nwa zabi rak zayd chi7aja", 31);
+			exit(1);
+		}
+	}
+}
+
 void	map_macro(t_vars *vars, int i, int j)
 {
-	
 	while (vars->s[i][j])
 	{
 		if (vars->s[0][j] != '1' || vars->s[vars->lines_c - 1][j] != '1')
@@ -47,24 +68,8 @@ void	map_macro(t_vars *vars, int i, int j)
 			write(2, "Error\nwa zabi wa mojo jojo", 27);
 			exit(1);
 		}
-		else if (vars->s[i][j] == 'P')
-			vars->p_c++;
-		else if (vars->s[i][j] == 'C')
-			vars->c_c++;
-		else if (vars->s[i][j] == 'E')
-			vars->v_c++;
-		else if (vars->s[i][j] == 'I')
-			vars->im_c++;
-		else if (vars->s[i][j] != 'E' && vars->s[i][j] != 'C'
-					&& vars->s[i][j] != '1')
-		{
-			if (vars->s[i][j] != 'P' && vars->s[i][j] != '0'
-					&& vars->s[i][j] != 'I')
-			{
-				write(2, "Error\nwa zabi rak zayd chi7aja", 31);
-				exit(1);
-			}
-		}
+		else
+			map_macro_utils(vars, i, j);
 		j++;
 	}
 }
@@ -76,10 +81,6 @@ void	map_checker(t_vars *vars)
 
 	i = 0;
 	j = 0;
-	vars->c_c = 0;
-	vars->p_c = 0;
-	vars->v_c = 0;
-	vars->im_c = 0;
 	while (vars->s[i])
 	{
 		map_macro(vars, i, j);

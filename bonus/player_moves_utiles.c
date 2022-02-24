@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 19:02:16 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/23 11:50:53 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/24 15:19:47 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	macro_up(t_vars *vars)
 	mlx_string_put(vars->mlx, vars->win, 0, 0, 0xFFFFFF, str);
 	free(str);
 }
+
 void	macro_down(t_vars *vars)
 {
 	char	*str;

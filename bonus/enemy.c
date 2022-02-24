@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 21:20:52 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/23 21:57:19 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/24 13:23:44 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	enemy(t_vars *vars)
 {
-	if (vars->s[vars->enm_y + 1][vars->enm_x] == '0' || vars->s[vars->enm_y - 1][vars->enm_x] == '0')
+	if (vars->s[vars->enm_y + 1][vars->enm_x] == '0'
+		|| vars->s[vars->enm_y - 1][vars->enm_x] == '0')
 	{
 		vars->enm_x = vars->enm_i / 75;
 		vars->enm_y = vars->enm_j / 75;

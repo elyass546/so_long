@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:36:37 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/21 18:25:49 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/24 13:25:42 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*ft_itoa(int n)
 		nb = nb / 10;
 		nbr_len++;
 	}
-	sub = (char *)malloc(sizeof(char)* (nbr_len + 1));
+	sub = (char *)malloc(sizeof(char) * (nbr_len + 1));
 	sub[nbr_len + 1] = '\0';
 	if (!sub)
 		return (NULL);

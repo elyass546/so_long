@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:13:00 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/23 21:34:57 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/24 14:46:59 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void	xpm_imgs(t_vars *v)
 	v->i_w = mlx_xpm_file_to_image(v->mlx, "imgs/wall.xpm", &v->x, &v->y);
 	v->i_enm = mlx_xpm_file_to_image(v->mlx, "imgs/impstor.xpm", &v->x, &v->y);
 	v->i_c = mlx_xpm_file_to_image(v->mlx, "imgs/coin.xpm", &v->x, &v->y);
-	v->i_deadp = mlx_xpm_file_to_image(v->mlx, "imgs/dead_player.xpm", &v->x, &v->y);
+	v->i_deadp = mlx_xpm_file_to_image(v->mlx,
+			"imgs/dead_player.xpm", &v->x, &v->y);
 	v->i_ov = mlx_xpm_file_to_image(v->mlx, "imgs/open_vent.xpm", &v->x, &v->y);
 	v->i_cv = mlx_xpm_file_to_image(v->mlx,
 			"imgs/closed_vent.xpm", &v->x, &v->y);
@@ -55,6 +56,19 @@ void	new_win(t_vars *vrs, int weight, int height, int fd)
 	vrs->s[i] = NULL;
 }
 
+void	init(t_vars *vars)
+{
+	vars->coin_c = 0;
+	vars->alive = 1;
+	vars->loop = 0;
+	vars->p_moves = 0;
+	vars->switsh = 0;
+	vars->c_c = 0;
+	vars->p_c = 0;
+	vars->v_c = 0;
+	vars->im_c = 0;
+}
+
 int	main(int ac, char **av)
 {
 	t_vars	vars;
@@ -63,11 +77,7 @@ int	main(int ac, char **av)
 	int		count_line[2];
 
 	i = 0;
-	vars.coin_c = 0;
-	vars.alive = 1;
-	vars.loop = 0;
-	vars.p_moves = 0;
-	vars.switsh = 0;
+	init(&vars);
 	fd = open(av[1], O_RDONLY);
 	vars.mlx = mlx_init();
 	if (ac == 2)

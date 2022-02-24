@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 19:34:32 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/23 17:47:50 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/24 15:19:34 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,9 @@ void	ft_putnbr(int n);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 char	*ft_itoa(int n);
-int    animation(t_vars *vars);
+int		animation(t_vars *vars);
 void	enemy(t_vars *vars);
-void    enemy_mup(t_vars *vars);
-void    enemy_mdown(t_vars *vars);
+void	enemy_mup(t_vars *vars);
+void	enemy_mdown(t_vars *vars);
 
 #endif
