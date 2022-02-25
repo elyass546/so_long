@@ -6,11 +6,11 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 19:40:32 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/24 15:41:15 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/25 15:46:52 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "../so_long_bonus.h"
 
 void	ft_putstr(char *str)
 {

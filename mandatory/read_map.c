@@ -6,11 +6,11 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:39:17 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/24 16:33:30 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/25 15:46:21 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	put_images(t_vars *asdf, char c, int m, int n)
 {

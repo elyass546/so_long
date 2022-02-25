@@ -6,39 +6,44 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:13:00 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/24 16:33:19 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/25 23:21:12 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	xpm_imgs(t_vars *v)
+void	xpm_imgs(t_vars *vars)
 {
-	v->i_p = mlx_xpm_file_to_image(v->mlx, "imgs/player.xpm", &v->x, &v->y);
-	v->i_g = mlx_xpm_file_to_image(v->mlx, "imgs/minc.xpm", &v->x, &v->y);
-	v->i_w = mlx_xpm_file_to_image(v->mlx, "imgs/wall.xpm", &v->x, &v->y);
-	v->i_c = mlx_xpm_file_to_image(v->mlx, "imgs/coin.xpm", &v->x, &v->y);
-	v->i_ov = mlx_xpm_file_to_image(v->mlx, "imgs/open_vent.xpm", &v->x, &v->y);
-	v->i_cv = mlx_xpm_file_to_image(v->mlx,
-			"imgs/closed_vent.xpm", &v->x, &v->y);
+	vars->i_p = mlx_xpm_file_to_image(vars->mlx,
+			"./imgs/player.xpm", &vars->x, &vars->y);
+	vars->i_g = mlx_xpm_file_to_image(vars->mlx,
+			"./imgs/minc.xpm", &vars->x, &vars->y);
+	vars->i_w = mlx_xpm_file_to_image(vars->mlx,
+			"./imgs/wall.xpm", &vars->x, &vars->y);
+	vars->i_c = mlx_xpm_file_to_image(vars->mlx,
+			"./imgs/coin.xpm", &vars->x, &vars->y);
+	vars->i_ov = mlx_xpm_file_to_image(vars->mlx,
+			"./imgs/open_vent.xpm", &vars->x, &vars->y);
+	vars->i_cv = mlx_xpm_file_to_image(vars->mlx,
+			"./imgs/closed_vent.xpm", &vars->x, &vars->y);
 }
 
-void	new_win(t_vars *vrs, int weight, int height, int fd)
+void	new_win(t_vars *vars, int weight, int height, int fd)
 {
 	int		i;
 	char	*file;
 
 	file = "so_long";
 	i = 0;
-	vrs->win = mlx_new_window(vrs->mlx, (weight * 75), (height * 75), file);
-	xpm_imgs(vrs);
-	vrs->s = (char **)malloc(sizeof(char *) * (height + 1));
+	vars->win = mlx_new_window(vars->mlx, (weight * 75), (height * 75), file);
+	xpm_imgs(vars);
+	vars->s = (char **)malloc(sizeof(char *) * (height + 1));
 	while (i < height)
 	{
-		vrs->s[i] = get_next_line(fd);
+		vars->s[i] = get_next_line(fd);
 		i++;
 	}
-	vrs->s[i] = NULL;
+	vars->s[i] = NULL;
 }
 
 int	main(int ac, char **av)
@@ -50,6 +55,7 @@ int	main(int ac, char **av)
 
 	i = 0;
 	vars.coin_c = 0;
+	vars.p_moves = 0;
 	fd = open(av[1], O_RDONLY);
 	vars.mlx = mlx_init();
 	if (ac == 2)

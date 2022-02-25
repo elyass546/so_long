@@ -6,11 +6,11 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:42:07 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/20 19:29:24 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/25 15:46:18 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	right_move(t_vars *vars)
 {

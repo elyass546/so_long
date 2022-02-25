@@ -6,11 +6,11 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 21:20:52 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/25 12:13:53 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/25 15:46:44 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "../so_long_bonus.h"
 
 void	enemy(t_vars *vars)
 {

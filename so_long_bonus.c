@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:13:00 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/25 12:07:28 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/25 16:46:26 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,24 @@ int	labas(void)
 
 void	xpm_imgs(t_vars *v)
 {
-	v->m_1 = mlx_xpm_file_to_image(v->mlx, "imgs/move1.xpm", &v->x, &v->y);
-	v->m_2 = mlx_xpm_file_to_image(v->mlx, "imgs/move2.xpm", &v->x, &v->y);
-	v->m_3 = mlx_xpm_file_to_image(v->mlx, "imgs/move3.xpm", &v->x, &v->y);
-	v->m_4 = mlx_xpm_file_to_image(v->mlx, "imgs/move4.xpm", &v->x, &v->y);
-	v->m_5 = mlx_xpm_file_to_image(v->mlx, "imgs/move5.xpm", &v->x, &v->y);
-	v->i_p = mlx_xpm_file_to_image(v->mlx, "imgs/player.xpm", &v->x, &v->y);
-	v->i_g = mlx_xpm_file_to_image(v->mlx, "imgs/minc.xpm", &v->x, &v->y);
-	v->i_g = mlx_xpm_file_to_image(v->mlx, "imgs/minc.xpm", &v->x, &v->y);
-	v->i_w = mlx_xpm_file_to_image(v->mlx, "imgs/wall.xpm", &v->x, &v->y);
-	v->i_enm = mlx_xpm_file_to_image(v->mlx, "imgs/impstor.xpm", &v->x, &v->y);
-	v->i_c = mlx_xpm_file_to_image(v->mlx, "imgs/coin.xpm", &v->x, &v->y);
+	v->m_1 = mlx_xpm_file_to_image(v->mlx, "./imgs/move1.xpm", &v->x, &v->y);
+	v->m_2 = mlx_xpm_file_to_image(v->mlx, "./imgs/move2.xpm", &v->x, &v->y);
+	v->m_3 = mlx_xpm_file_to_image(v->mlx, "./imgs/move3.xpm", &v->x, &v->y);
+	v->m_4 = mlx_xpm_file_to_image(v->mlx, "./imgs/move4.xpm", &v->x, &v->y);
+	v->m_5 = mlx_xpm_file_to_image(v->mlx, "./imgs/move5.xpm", &v->x, &v->y);
+	v->i_p = mlx_xpm_file_to_image(v->mlx, "./imgs/player.xpm", &v->x, &v->y);
+	v->i_g = mlx_xpm_file_to_image(v->mlx, "./imgs/minc.xpm", &v->x, &v->y);
+	v->i_g = mlx_xpm_file_to_image(v->mlx, "./imgs/minc.xpm", &v->x, &v->y);
+	v->i_w = mlx_xpm_file_to_image(v->mlx, "./imgs/wall.xpm", &v->x, &v->y);
+	v->i_enm = mlx_xpm_file_to_image(v->mlx,
+			"./imgs/impstor.xpm", &v->x, &v->y);
+	v->i_c = mlx_xpm_file_to_image(v->mlx, "./imgs/coin.xpm", &v->x, &v->y);
 	v->i_deadp = mlx_xpm_file_to_image(v->mlx,
-			"imgs/dead_player.xpm", &v->x, &v->y);
-	v->i_ov = mlx_xpm_file_to_image(v->mlx, "imgs/open_vent.xpm", &v->x, &v->y);
+			"./imgs/dead_player.xpm", &v->x, &v->y);
+	v->i_ov = mlx_xpm_file_to_image(v->mlx,
+			"./imgs/open_vent.xpm", &v->x, &v->y);
 	v->i_cv = mlx_xpm_file_to_image(v->mlx,
-			"imgs/closed_vent.xpm", &v->x, &v->y);
+			"./imgs/closed_vent.xpm", &v->x, &v->y);
 }
 
 void	new_win(t_vars *vrs, int weight, int height, int fd)

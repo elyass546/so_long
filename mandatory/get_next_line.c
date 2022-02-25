@@ -6,11 +6,11 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:41:49 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/18 17:10:21 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/25 22:59:49 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 size_t	ft_strlen(char *str)
 {
@@ -59,22 +59,6 @@ char	*ft_strdup(char *src)
 	}
 	c[j] = '\0';
 	return (c);
-}
-
-int	utils_func(char *str, char c, int read_return, int fd)
-{
-	char	*temp;
-
-	while (read_return > 0)
-	{
-		if (c == '\n')
-			break ;
-		temp = str;
-		str = ft_strjoin(temp, c);
-		free (temp);
-		read_return = read(fd, &c, 1);
-	}
-	return (read_return);
 }
 
 char	*get_next_line(int fd)

@@ -6,11 +6,11 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:40:03 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/24 16:26:58 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/25 23:22:19 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	hello(t_vars *vars)
 {
@@ -25,14 +25,19 @@ void	hello(t_vars *vars)
 		len_line1 = ft_strlen(vars->s[i]);
 		if (len_line1 != len_line)
 		{
-			write(2, "Error\nsalam len ghalat", 23);
+			write(2, "Error\nwrong line length.", 25);
 			exit(1);
 		}
 		i++;
 	}
-	if (vars->p_c != 1 || vars->c_c < 1 || vars->v_c < 1)
+	if (vars->p_c < 1 || vars->c_c < 1 || vars->v_c < 1)
 	{
-		write(2, "Error\nmissing one or more ellements", 36);
+		write(2, "Error\nmissing one or more ellements.", 37);
+		exit(1);
+	}
+	else if (vars->p_c > 1 || vars->v_c > 1)
+	{
+		write(2, "Error\nunnecessary element.", 27);
 		exit(1);
 	}
 }
@@ -43,7 +48,7 @@ void	map_macro(t_vars *vars, int i, int j)
 	{
 		if (vars->s[0][j] != '1' || vars->s[vars->lines_c - 1][j] != '1')
 		{
-			write(2, "Error\nwa zabi wa mojo jojo", 27);
+			write(2, "Error\nthere is something wrong in the map lines.", 49);
 			exit(1);
 		}
 		else if (vars->s[i][j] == 'P')
@@ -57,7 +62,7 @@ void	map_macro(t_vars *vars, int i, int j)
 		{
 			if (vars->s[i][j] != 'P' && vars->s[i][j] != '0')
 			{
-				write(2, "Error\nwa zabi rak zayd chi7aja", 31);
+				write(2, "Error\nyou add an unacceptable element(s).", 42);
 				exit(1);
 			}
 		}
@@ -75,7 +80,6 @@ void	map_checker(t_vars *vars)
 	vars->c_c = 0;
 	vars->p_c = 0;
 	vars->v_c = 0;
-	
 	while (vars->s[i])
 	{
 		map_macro(vars, i, j);
@@ -87,7 +91,7 @@ void	map_checker(t_vars *vars)
 		vars->size_line = ft_strlen(vars->s[i]) - 1;
 		if (vars->s[i][0] != '1' || vars->s[i][vars->size_line] != '1')
 		{
-			write(2, "Error\nwa zabi wa mojo jojo l7odod a zbi", 40);
+			write(2, "Error\nsomething wrong in the sidewall line.", 44);
 			exit(1);
 		}
 		i++;
