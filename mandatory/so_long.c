@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:13:00 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/21 16:03:42 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/24 16:33:19 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(int ac, char **av)
 		ft_line_counter(count_line, av[1]);
 	else
 	{
-		write(2, "Error\nmissing map name", 30);
+		write(2, "Error\nmissing map name", 23);
 		exit(1);
 	}
 	vars.lines_c = count_line[0];

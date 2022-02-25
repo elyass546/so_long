@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:13:00 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/24 14:46:59 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/25 12:07:28 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	labas(void)
 {
@@ -63,6 +63,7 @@ void	init(t_vars *vars)
 	vars->loop = 0;
 	vars->p_moves = 0;
 	vars->switsh = 0;
+	vars->switsh1 = 0;
 	vars->c_c = 0;
 	vars->p_c = 0;
 	vars->v_c = 0;

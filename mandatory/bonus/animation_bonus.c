@@ -6,11 +6,11 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:55:55 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/24 13:21:10 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/24 15:41:22 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	animation_utiles(t_vars *vars, int i)
 {

@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:40:03 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/21 13:19:43 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/24 16:26:58 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void	map_checker(t_vars *vars)
 	vars->c_c = 0;
 	vars->p_c = 0;
 	vars->v_c = 0;
+	
 	while (vars->s[i])
 	{
 		map_macro(vars, i, j);

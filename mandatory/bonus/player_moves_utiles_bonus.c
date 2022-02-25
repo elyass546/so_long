@@ -6,11 +6,11 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 19:02:16 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/24 15:19:47 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/24 15:41:02 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	macro_right(t_vars *vars)
 {

@@ -6,11 +6,11 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:36:37 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/24 13:25:42 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/24 15:41:10 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 static char	*nbr_stock(int n, char *sub, int nbr_len)
 {

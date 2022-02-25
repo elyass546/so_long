@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   enemy_utiles.c                                     :+:      :+:    :+:   */
+/*   enemy_utiles_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 18:38:17 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/24 13:23:14 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/25 12:13:58 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	enemy_mup(t_vars *vars)
 {
@@ -35,8 +35,9 @@ void	enemy_mup(t_vars *vars)
 		vars->enm_j -= 75;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_enm,
 			vars->enm_i, vars->enm_j);
-		if (vars->s[vars->enm_y - 1][vars->enm_x] == '1')
+		if (vars->s[vars->enm_y - 1][vars->enm_x] == '1' || vars->s[vars->enm_y - 1][vars->enm_x] == 'C')
 			vars->switsh = 0;
+			vars->switsh1 = 1;
 	}
 }
 
@@ -44,10 +45,10 @@ void	enemy_mdown(t_vars *vars)
 {
 	if (vars->s[vars->enm_y + 1][vars->enm_x] == 'P')
 	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_w,
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g,
 			vars->enm_i, vars->enm_j);
 		vars->enm_j += 75;
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_w,
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_g,
 			vars->enm_i, vars->enm_j);
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_deadp,
 			vars->enm_i, vars->enm_j);
@@ -63,7 +64,8 @@ void	enemy_mdown(t_vars *vars)
 		vars->enm_j += 75;
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_enm,
 			vars->enm_i, vars->enm_j);
-		if (vars->s[vars->enm_y + 1][vars->enm_x] == '1')
+		if (vars->s[vars->enm_y + 1][vars->enm_x] == '1' || vars->s[vars->enm_y + 1][vars->enm_x] == 'C')
 			vars->switsh = 1;
+			vars->switsh1 = 0;
 	}
 }
