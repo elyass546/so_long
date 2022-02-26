@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:39:17 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/25 15:46:21 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/26 21:45:51 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	read_map2(t_vars *asdf, int a, int m, int n)
 	{
 		if (asdf->s[a][b] == 'P')
 		{
-			mlx_put_image_to_window(asdf->mlx, asdf->win, asdf->i_p, m, n);
+			mlx_put_image_to_window(asdf->mlx, asdf->win, asdf->i_p_right, m, n);
 			asdf->y = a;
 			asdf->i = m;
 			asdf->x = b;

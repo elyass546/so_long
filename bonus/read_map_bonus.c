@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:39:17 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/25 15:47:12 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/26 22:56:19 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	put_coord(t_vars *vars, char c, int m, int n)
 {
 	if (c == 'P')
 	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_p, m, n);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_p_right, m, n);
 		vars->j = n;
 		vars->i = m;
 	}

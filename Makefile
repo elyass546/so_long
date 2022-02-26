@@ -10,21 +10,22 @@ FILES = ./mandatory/get_next_line.c\
 		./mandatory/player_moves.c\
 		./mandatory/read_map.c\
 		./mandatory/player_moves_utiles.c\
-		so_long.c\
-		./mandatory/ft_putnbr.c
+		./mandatory/ft_putnbr.c\
+		so_long.c
 
 FILES_BONUS = ./bonus/get_next_line.c \
 				./bonus/line_counter_bonus.c \
 				./bonus/map_checker_bonus.c \
 				./bonus/player_moves_bonus.c \
 				./bonus/read_map_bonus.c \
-				so_long_bonus.c \
 				./bonus/player_moves_utiles_bonus.c \
 				./bonus/ft_putnbr.c \
 				./bonus/itoa.c \
 				./bonus/animation_bonus.c \
 				./bonus/enemy_bonus.c \
-				./bonus/enemy_utiles_bonus.c
+				./bonus/enemy_utiles_bonus.c\
+				./bonus/new_win.c\
+				so_long_bonus.c 
 
 NAME = so_long
 

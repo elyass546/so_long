@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 19:34:32 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/24 20:42:52 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/26 22:55:06 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,12 @@
 typedef struct s_vars {
 	void	*mlx;
 	void	*win;
-	int		x;
-	int		y;
-	int		enm_x;
-	int		enm_y;
-	int		i;
-	int		e_moves;
-	int		j;
-	int		enm_i;
-	int		enm_j;
-	int		switsh1;
-	int		switsh;
 	void	*i_deadp;
-	void	*i_p;
+	void	*i_p_left;
+	void	*i_p_right;
 	void	*i_g;
 	void	*i_c;
 	void	*i_w;
-	void	*i_ov;
 	void	*i_cv;
 	void	*i_enm;
 	void	*m_1;
@@ -46,6 +35,17 @@ typedef struct s_vars {
 	void	*m_3;
 	void	*m_4;
 	void	*m_5;
+	int		x;
+	int		y;
+	int		i;
+	int		j;
+	int		enm_x;
+	int		enm_y;
+	int		enm_i;
+	int		enm_j;
+	int		e_moves;
+	int		switsh1;
+	int		switsh;
 	int		coin_c;
 	int		p_moves;
 	int		lines_c;
@@ -59,32 +59,46 @@ typedef struct s_vars {
 	char	**s;
 }				t_vars;
 
+/*******************************************/
+
 typedef struct s_data {
 	char	c;
 	char	*str;
-	int		read_return;
 	char	*temp;
+	int		read_return;
 }				t_data;
 
-char	*get_next_line(int fd);
-int		move_function(int keycode, t_vars *vars);
-char	*ft_strjoin(char *s1, char c);
+/*******************************************/
+
 size_t	ft_strlen(char *str);
+
+/*******************************************/
+int		move_function(int keycode, t_vars *vars);
+int		animation(t_vars *vars);
+
+/*******************************************/
+
+char	*ft_strjoin(char *s1, char c);
+char	*get_next_line(int fd);
+
+/*******************************************/
+
+void	new_win(t_vars *vars, int weight, int height, int fd);
 void	ft_line_counter(int	*count, char *str);
-void	read_map(t_vars *asdf);
 void	player_place(t_vars *asdf);
 void	map_checker(t_vars *vars);
 void	macro_right(t_vars *vars);
-void	macro_left(t_vars *vars);
-void	macro_up(t_vars *vars);
-void	macro_down(t_vars *vars);
-void	ft_putnbr(int n);
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-char	*ft_itoa(int n);
-int		animation(t_vars *vars);
-void	enemy(t_vars *vars);
-void	enemy_mup(t_vars *vars);
 void	enemy_mdown(t_vars *vars);
+void	macro_left(t_vars *vars);
+void	macro_down(t_vars *vars);
+void	enemy_mup(t_vars *vars);
+void	read_map(t_vars *asdf);
+void	macro_up(t_vars *vars);
+void	ft_putstr(char *str);
+void	xpm_imgs(t_vars *v);
+void	enemy(t_vars *vars);
+void	ft_putchar(char c);
+void	ft_putnbr(int n);
+char	*ft_itoa(int n);
 
 #endif

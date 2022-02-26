@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:55:55 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/25 15:46:33 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/26 20:16:03 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,28 @@ void	animation_utiles(t_vars *vars, int i)
 {
 	if (i < 10)
 	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_w, 0, 75);
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->m_1, 0, 75);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_w, 75, 0);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->m_1, 75, 0);
 	}
 	else if (i < 20)
 	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_w, 0, 75);
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->m_2, 0, 75);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_w, 75, 0);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->m_2, 75, 0);
 	}
 	else if (i < 30)
 	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_w, 0, 75);
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->m_3, 0, 75);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_w, 75, 0);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->m_3, 75, 0);
 	}
 	else if (i < 40)
 	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_w, 0, 75);
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->m_4, 0, 75);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_w, 75, 0);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->m_4, 75, 0);
 	}
 	else if (i < 50)
 	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_w, 0, 75);
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->m_5, 0, 75);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->i_w, 75, 0);
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->m_5, 75, 0);
 	}
 }
 

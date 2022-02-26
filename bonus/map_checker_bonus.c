@@ -6,11 +6,25 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 13:40:03 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/25 23:23:00 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/26 18:35:39 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long_bonus.h"
+
+void	print_error(t_vars *vars)
+{
+	if (vars->p_c < 1 || vars->c_c < 1 || vars->v_c < 1 || vars->im_c < 1)
+	{
+		ft_putstr("Error\nmissing one or more ellements.\n");
+		exit(1);
+	}
+	else if (vars->p_c > 1 || vars->v_c > 1 || vars->im_c > 1)
+	{
+		ft_putstr("Error\nUnnecessary element.\n");
+		exit(1);
+	}
+}
 
 void	hello(t_vars *vars)
 {
@@ -25,21 +39,12 @@ void	hello(t_vars *vars)
 		len_line1 = ft_strlen(vars->s[i]);
 		if (len_line1 != len_line)
 		{
-			write(2, "Error\nwrong line length.", 25);
+			write(2, "Error\nWrong line length.", 25);
 			exit(1);
 		}
 		i++;
 	}
-	if (vars->p_c < 1 || vars->c_c < 1 || vars->v_c < 1 || vars->im_c < 1)
-	{
-		write(2, "Error\nmissing one or more ellements", 36);
-		exit(1);
-	}
-	else if (vars->p_c > 1 || vars->v_c > 1 || vars->im_c > 1)
-	{
-		write(2, "Error\nunnecessary element.", 27);
-		exit(1);
-	}
+	print_error(vars);
 }
 
 void	map_macro_utils(t_vars *vars, int i, int j)
@@ -58,7 +63,7 @@ void	map_macro_utils(t_vars *vars, int i, int j)
 		if (vars->s[i][j] != 'P' && vars->s[i][j] != '0'
 				&& vars->s[i][j] != 'I')
 		{
-			write(2, "Error\nyou add an unacceptable element(s).", 42);
+			ft_putstr("Error\nyou add an unacceptable element(s).\n");
 			exit(1);
 		}
 	}
@@ -70,7 +75,7 @@ void	map_macro(t_vars *vars, int i, int j)
 	{
 		if (vars->s[0][j] != '1' || vars->s[vars->lines_c - 1][j] != '1')
 		{
-			write(2, "Error\nthere is something wrong in the map lines.", 49);
+			ft_putstr("Error\nthere is something wrong in the map lines.\n");
 			exit(1);
 		}
 		else
@@ -97,7 +102,7 @@ void	map_checker(t_vars *vars)
 		vars->size_line = ft_strlen(vars->s[i]) - 1;
 		if (vars->s[i][0] != '1' || vars->s[i][vars->size_line] != '1')
 		{
-			write(2, "Error\nsomething wrong in the sidewall line.", 55);
+			ft_putstr("Error\nsomething wrong in the sidewall line.\n");
 			exit(1);
 		}
 		i++;

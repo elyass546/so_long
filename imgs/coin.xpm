@@ -59,7 +59,7 @@ static char *result[] = {
 "M c #FFFED0",
 "N c #FFFFD0",
 "B c #FFFED1",
-"V c #ECECEC",
+"V c #ffECECEC",
 "C c #EDECEC",
 "Z c #ECEDEC",
 "A c #ECECED",

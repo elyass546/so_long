@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: ie-laabb <ie-laabb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 19:34:32 by ie-laabb          #+#    #+#             */
-/*   Updated: 2022/02/20 20:22:07 by ie-laabb         ###   ########.fr       */
+/*   Updated: 2022/02/26 21:18:34 by ie-laabb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ typedef struct s_vars {
 	int		y;
 	int		i;
 	int		j;
-	void	*i_p;
+	void	*i_p_left;
+	void	*i_p_right;
 	void	*i_g;
 	void	*i_c;
 	void	*i_w;
@@ -42,6 +43,8 @@ typedef struct s_vars {
 	char	**s;
 }				t_vars;
 
+/*************************************/
+
 typedef struct s_data {
 	char	c;
 	char	*str;
@@ -49,20 +52,31 @@ typedef struct s_data {
 	char	*temp;
 }				t_data;
 
-char	*get_next_line(int fd);
-int		move_function(int keycode, t_vars *vars);
-char	*ft_strjoin(char *s1, char c);
+/*************************************/
+
 size_t	ft_strlen(char *str);
+
+/*************************************/
+
+int		move_function(int keycode, t_vars *vars);
+
+/*************************************/
+
+char	*ft_strjoin(char *s1, char c);
+char	*get_next_line(int fd);
+
+/*************************************/
+
 void	ft_line_counter(int	*count, char *str);
-void	read_map(t_vars *asdf);
 void	player_place(t_vars *asdf);
 void	map_checker(t_vars *vars);
 void	macro_right(t_vars *vars);
 void	macro_left(t_vars *vars);
-void	macro_up(t_vars *vars);
 void	macro_down(t_vars *vars);
-void	ft_putnbr(int n);
-void	ft_putchar(char c);
+void	read_map(t_vars *asdf);
+void	macro_up(t_vars *vars);
 void	ft_putstr(char *str);
+void	ft_putchar(char c);
+void	ft_putnbr(int n);
 
 #endif
